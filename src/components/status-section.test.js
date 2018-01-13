@@ -1,0 +1,11 @@
+import React from 'react';
+import {shallow} from 'enzyme';
+
+import StatusSection from './status-section';
+
+describe('<StatusSection/>', ()=>{
+	it('renders the StatusSection component w/o crashing', ()=>{
+		shallow(<StatusSection />);
+	});
+
+})
