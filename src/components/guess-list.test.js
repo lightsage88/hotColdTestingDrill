@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 
 import GuessList from './guess-list';
 //you need to pass in props for the test
@@ -18,5 +18,15 @@ describe('<GuessList/>', ()=>{
 		shallow(<GuessList guesses={[]}/>);
 		
 	});
+
+	it('creates an array of guesses from the guesses prop passed in', ()=>{
+		const wrapper = mount(<GuessList guesses={['crip', 'loc', 'cuh']}/>);
+		wrapper.update();
+		const tries = wrapper.find('li');;
+		console.log('fuck bloods, crips for EVA blue stay TRU!');
+		tries.length ===3;
+	});
+
+	//rendering a list of guesses?
 
 })

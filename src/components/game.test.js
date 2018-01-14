@@ -8,4 +8,9 @@ describe('<Game/>', ()=>{
 		shallow(<Game />);
 	});
 
+	it('begins with a state of feedback being "Make your guess!"', () => {
+		const wrapper = shallow(<Game />);
+		expect(wrapper.state('feedback')).toEqual('Make your guess!');
+	});
+
 })
