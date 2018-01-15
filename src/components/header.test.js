@@ -9,10 +9,11 @@ describe('<Header/>', ()=>{
 		shallow(<Header />);
 	});
 
-	// it('begins with props named "onGenerateAuralUpdate" and "onRestartGame"',()=>{
-	// 	const wrapper = mount(<Header {...props}/>);
-	// 	const onGenerateAuralUpdate = {props.onGenerateAuralUpdate};
-	// 	expect(wrapper.props().onGenerateAuralUpdate).toEqual(onGenerateAuralUpdate);
-	// });
+	it('begins with props named "onGenerateAuralUpdate" and "onRestartGame"',()=>{
+		const callback = jest.fn();
+		const wrapper = mount(<Header onGenerateAuralUpdate={callback} onRestartGame={callback}/>);
+		expect(wrapper.props().onGenerateAuralUpdate).toEqual(callback);
+		expect(wrapper.props().onRestartGame).toEqual(callback);
+	});
 
 })
